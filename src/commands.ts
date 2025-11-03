@@ -2,6 +2,7 @@ import { commandHelp } from "./command_help.js";
 import { commandExit } from "./command_exit.js";
 
 import type { CLICommand } from "./state.js";
+import { commandMap, commandMapb } from "./command_map.js";
 
 export function getCommands(): Record<string, CLICommand> {
   return {
@@ -14,6 +15,16 @@ export function getCommands(): Record<string, CLICommand> {
       name: "exit",
       description: "Exit the Pokedex",
       callback: commandExit,
+    },
+    map: {
+      name: "map",
+      description: "Get the next page of locations",
+      callback: commandMap,
+    },
+    mapb: {
+      name: "mapb",
+      description: "Get the previous page of locations",
+      callback: commandMapb,
     },
   };
 }
